@@ -11,6 +11,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Clean dist folder
+        run: rm -rf dist
       - name: Checkout repository
         uses: actions/checkout@v4
 
@@ -30,6 +32,6 @@ jobs:
 
       - name: Deploy to GitHub Pages
         if: github.ref == 'refs/heads/master' && github.event_name == 'push'
-        run: npx angular-cli-ghpages --dir=dist/my-angular-app
+        run: npx angular-cli-ghpages --dir=dist/my-angular-app/browser
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
