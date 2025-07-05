@@ -27,9 +27,3 @@ jobs:
 
       - name: Build Angular app
         run: npm run build -- --configuration=production
-
-      - name: Deploy to GitHub Pages
-        if: github.ref == 'refs/heads/master' && github.event_name == 'push'
-        run: npm run deploy
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
