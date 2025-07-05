@@ -6,7 +6,9 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "deploy": "ng build --base-href https://github.com/manalikat01/angular-latest/ && angular-cli-ghpages --branch gh-pages"
+
   },
   "private": true,
   "dependencies": {
