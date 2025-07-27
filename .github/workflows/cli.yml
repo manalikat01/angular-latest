@@ -28,7 +28,7 @@ jobs:
         run: npm test -- --watch=false --browsers=ChromeHeadless
 
       - name: Build Angular app
-        run: npm run build -- --configuration=production --base-href=/my-angular-app/
+        run: npm run build
 
       - name: Deploy to GitHub Pages
         if: github.ref == 'refs/heads/master' && github.event_name == 'push'
